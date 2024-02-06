@@ -1,5 +1,4 @@
 # SORTA-WASTE
-# SORTA WASTE
 
 SORTA WASTE is a web-based application designed to connect waste producers with waste reusers and recyclers, while also enabling users to sort their waste effectively. Whether you're a household, business, or organization, SORTA WASTE provides a platform to manage waste responsibly and contribute to environmental sustainability.
 
@@ -24,8 +23,34 @@ SORTA WASTE is a web-based application designed to bridge the gap between waste 
 - Database: MySQL
 - Authentication: Django Authentication System
 
-## Installation
+## Installation and Usage
 
 To run this project locally, follow these steps:
 
-1. Clone the repository to your local machine:
+```bash
+# Clone the repository to your local machine
+git clone [repository URL]
+
+# Navigate to the project directory
+cd sorta-waste
+
+# Set up a virtual environment (optional but recommended)
+python -m venv venv
+
+# For Linux/Mac
+source venv/bin/activate
+
+# For Windows
+.\venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Apply database migrations
+python manage.py migrate
+
+# Create a superuser (admin account)
+python manage.py createsuperuser
+
+# Start the development server
+python manage.py runserver
