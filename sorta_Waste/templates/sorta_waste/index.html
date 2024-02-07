@@ -1,0 +1,48 @@
+{% extends 'sorta_waste/base.html' %}
+{% load static %}
+{% block title%} Home {% endblock %}
+{% block content %}
+<section class="header">
+    <div class="nav">
+        <ul>
+            <li><a href="#Home">HOME</a></li>
+            <li><a href="#Home">SIGN IN</a></li>
+            <li><a href="#Home">BILLING</a></li>
+        </ul>
+    </div>
+
+    <div class="header-text">
+        <h3>SORTA WASTE</h3><br>
+        <P>Taka ngumu ndani ya shimo la taka ni rasilimali iliyopotea</P><br>
+        <a href="">JISAJIRI</a>
+    </div>
+</section>
+<div class="about-you">
+<h2>Dear User Welcome To Sorta Waste, Tell Us About Yourself</h2>
+</div>
+<section class="p_infos">
+    <div class="p_infos_box">
+        <h1>ABOUT YOU</h1>
+        <div class="name">
+            <label for="name">NAME</label>
+            <input type="text" placeholder="Enter your full name. eg Michael Msita">
+        </div>
+        <div class="name">
+            <label for="name">REGION</label>
+            <input type="text" placeholder="Enter Your Region. eg Dar es salaam">
+        </div>
+        <div class="name">
+            <label for="name">DISTRICT</label>
+            <input type="text" placeholder="Enter Your District. eg Kinondoni">
+        </div>
+        <div class="name">
+            <label for="name">WARD</label>
+            <input type="text" placeholder="Enter Your Ward. eg Makuburi">
+        </div>
+        <div class="name">
+            <label for="name">STREET</label>
+            <input type="text" placeholder="Enter Your Street. eg Kajima">
+        </div>
+    </div>
+</section>
+{% endblock %}
