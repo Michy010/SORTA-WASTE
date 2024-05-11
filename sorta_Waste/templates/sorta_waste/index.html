@@ -6,7 +6,7 @@
     <div class="nav">
         <ul>
             <li><a href="#Home">HOME</a></li>
-            <li><a href="#Home">SIGN IN</a></li>
+            <li><a href="{% url 'accounts:login' %}">SIGN IN</a></li>
             <li><a href="#Home">BILLING</a></li>
         </ul>
     </div>
@@ -14,7 +14,8 @@
     <div class="header-text">
         <h3>SORTA WASTE</h3><br>
         <P>Taka ngumu ndani ya shimo la taka ni rasilimali iliyopotea</P><br>
-        <a href="">JISAJIRI</a>
+        <a href="{% url 'accounts:signup_page' %}">JISAJIRI</a>
+        <a href="#" id="getLocationLink">Allow access to your location</a>
     </div>
 </section>
 <div class="about-you">
@@ -43,6 +44,11 @@
             <label for="name">STREET</label>
             <input type="text" placeholder="Enter Your Street. eg Kajima">
         </div>
+        <div class="submit-button">
+            <a href="">SUBMIT</a>
+        </div>
     </div>
 </section>
+
+<script src="{% static 'sorta_Waste/location.js' %}"></script>
 {% endblock %}

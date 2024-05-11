@@ -11,10 +11,21 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from django.conf import settings
 import os
+
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+RELATED_NAME = {
+    'auth.group': 'customuser_group_set',
+    'auth.permission': 'customuser_permission_set',
+}
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+MEDIA_ROOT = os.path.join (BASE_DIR, 'media')
+MEDIA_URL ='/media/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sorta_Waste',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join (BASE_DIR, 'staticfiles')
+
+LOGIN_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'

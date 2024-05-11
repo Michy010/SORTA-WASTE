@@ -1,0 +1,40 @@
+{% extends 'sorta_waste/base.html' %}
+{% load static %}
+{% block title%} OrderPage {% endblock %}
+{% block content %}
+
+<div class="producer-top-bar">
+  <div class="producer-image">
+      <img src="{% static 'sorta_Waste/SORTA/profile_pic.jpg' %}" alt="producer-profile">
+  </div>
+
+  <div class="producer-nav">
+      <ul>
+          <li>Name</li>
+          <li>Order Pending</li>
+          <li>Order Accepted</li>
+      </ul>
+  </div>
+</div>
+
+<div class="welcome-submit-page"><h2>Hello! User welcome to Sorta Waste, You can place your order now.</h2></div>
+
+<form method="post" enctype="multipart/form-data" class="waste-order-form">
+  {% csrf_token %}
+  <div class="form-group">
+      <label for="id_waste_type">Waste Type</label>
+      {{ form.waste_type }}
+  </div>
+  <div class="form-group">
+      <label for="id_bin_picture">Bin Picture</label>
+      {{ form.bin_picture }}
+  </div>
+  <div class="form-group">
+      <label for="id_size">Size</label>
+      {{ form.size }}
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{% endblock%}
