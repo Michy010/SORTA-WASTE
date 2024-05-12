@@ -29,19 +29,19 @@ To run this project locally, follow these steps:
 
 ```bash
 # Clone the repository to your local machine
-git clone [repository URL]
+git clone https://github.com/Michy010/SORTA-WASTE
 
 # Navigate to the project directory
-cd sorta-waste
+cd sorta-Waste
 
 # Set up a virtual environment (optional but recommended)
-python -m venv venv
+python -m venv wasteenv
 
 # For Linux/Mac
-source venv/bin/activate
+source wasteenv/bin/activate
 
 # For Windows
-.\venv\Scripts\activate
+.\wasteenv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt

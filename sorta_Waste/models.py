@@ -1,5 +1,6 @@
 from django.db import models
 from accounts.models import CustomUser
+from django.utils import timezone
 
 class WasteOrder (models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=1)
@@ -18,6 +19,7 @@ class WasteOrder (models.Model):
         ('super', '20Kg'),
     ]
     size = models.CharField(max_length=10, choices=WASTE_CHOICES, default='5Kg')
+    timestamp = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"Order {self.id}"

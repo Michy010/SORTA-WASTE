@@ -2,46 +2,13 @@
 {% load static %}
 {% block title%} OrderList {% endblock %}
 {% block content %}
-
-
-<!-- {% for user in users %} -->
 {% if user.is_authenticated %}
-<div class="order_display_block">
-    {% for order in orders %}
-        {% if order.plastic_waste %}
-            <p>Waste Type: Plastic</p>
-        {% elif order.organic_waste %}
-            <p>Waste Type: Organics</p>
-        {% elif order.electronic_waste %}
-            <p>Waste Type: Electronics</p>
-        {% elif order.metallic_waste %}
-            <p>Waste Type: Metallic</p>
-        {% else %}
-            <p>There is no existing order</p>
-        {% endif %}
-    {% empty %}
-        <p>There are no orders</p>
-    {% endfor %}
+{% for order in orders %}
+<p>{{order.waste_type}}</p>
+{% endfor %}
 {% endif %}
-
-{% if user.is_authenticated %}
-    {% for quantity in quantities %}
-        {% if quantity.small %}
-            <p>Waste Amount: 5kg</p>
-        {% elif quantity.mideum %}
-            <p>Waste Amount: 10kg</p>
-        {% elif quantity.large %}
-            <p>Waste Amount: 15kg</p>
-        {% elif quantity.super %}
-            <p>Waste Amount: 20kg</p>
-        {% else %}
-            <p>There is no existing order</p>
-        {% endif %}
-    {% empty %}
-        <p>There are no orders</p>
-    {% endfor %}
-{% endif %}
-</div>
-<!-- {% endfor %} -->
+{% for size in size %}
+{{order.size}}
+{% endfor %}
 {% endblock %}
 

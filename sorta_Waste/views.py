@@ -9,11 +9,8 @@ from django.http import JsonResponse
 def index (request):
     return render (request, 'sorta_waste/index.html') 
 
-    
-
 def collector (request):
     return render (request, 'sorta_waste/collector.html') 
-
 
 def update_location(request):
     if request.method == 'POST':
@@ -41,6 +38,6 @@ def waste_order_page (request):
     return render (request, 'sorta_Waste/waste_order_page.html', {'form':form} )
 
 def order_list (request):
-    orders = WasteOrder.objects.all()
+    orders = WasteOrder.objects.all().order_by('-timestamp')
     # quantities = WasteAmount.objects.all()
     return render (request, 'sorta_Waste/order_list.html', {'orders':orders})

@@ -20,7 +20,7 @@ RELATED_NAME = {
     'auth.permission': 'customuser_permission_set',
 }
 
-
+AUTH_USER_MODEL = 'accounts.CustomUser'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -135,5 +135,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join (BASE_DIR, 'staticfiles')
 
-LOGIN_REDIRECT_URL = 'login'
+LOGIN_REDIRECT_URL = 'orders'
 LOGIN_URL = 'login'

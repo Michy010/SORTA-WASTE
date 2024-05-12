@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div class="welcome-submit-page"><h2>Hello! User welcome to Sorta Waste, You can place your order now.</h2></div>
+<div class="welcome-submit-page"><h2>Hello! <b>{{user.username}}</b> welcome to Sorta Waste, You can place your order now.</h2></div>
 
 <form method="post" enctype="multipart/form-data" class="waste-order-form">
   {% csrf_token %}
